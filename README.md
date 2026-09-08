@@ -244,15 +244,25 @@ Un abogado puede estudiar pruebas, documentos, contratos, antecedentes y circuns
 ## ✅ Parte 8 — Entregables finales (Definition of Done)
 
 Requisitos de entrega del curso — todos deben estar ✅:
+
  Solución funcionando: Moda Protege responde consultas sobre la posible protección jurídica de creaciones de moda.
+ 
  URL pública: La herramienta está disponible para ser utilizada desde un navegador.
+ 
  Usuario real: Una persona externa al curso probó la herramienta.
+ 
  Evidencia: La prueba fue documentada en docs/evidencia-usuario.md.
+ 
  Repositorio actualizado: El repositorio contiene commits que muestran el desarrollo del proyecto.
+ 
  Corpus jurídico conectado: Las respuestas citan las fuentes utilizadas.
+ 
  Casos de prueba: Existen al menos cinco casos documentados.
+ 
  Análisis crítico: La Parte 7 está completa.
+ 
  Advertencia visible: La interfaz aclara que es un ejercicio académico y no asesoría legal.
-Enfoque que les recomiendo mantener
+ 
+Enfoque que les recomiendo mantener.
 
 
