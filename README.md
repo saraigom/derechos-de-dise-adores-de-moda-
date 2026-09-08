@@ -62,68 +62,78 @@ Marca cada hito cuando lo termines. Los hitos siguen las sesiones del curso.
 - [ ] **M5 — Análisis crítico y demo** *(Sesión 5)*: Parte 7 completada + presentación de 5 minutos.
 
 ### Bitácora de avance semanal
-| Semana | Qué hice | Enlace/captura | Dudas para la clase |
-| --- | --- | --- | --- |
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
+Semana 1: Delimitamos el problema jurídico y definimos el alcance de la herramienta. Seleccionamos como tema los derechos de los diseñadores de moda en Colombia.
+Enlace: Pendiente
+Dudas: ¿Qué tan amplio debe ser nuestro corpus jurídico?
 
----
+Semana 2: Crearemos las instrucciones iniciales del asistente y diseñaremos casos de prueba.
+Enlace: Pendiente
+Dudas: ¿Cómo evitar que el modelo dé respuestas fuera del corpus?
+
+Semana 3: Conectaremos las fuentes jurídicas mediante un sistema RAG y verificaremos las citas.
+Enlace:Pendiente
+Dudas: ¿Cómo mejorar la precisión de las citas normativas?
+
+Semana 4: Diseñaremos la interfaz web y realizaremos el despliegue público.
+Enlace:Pendiente
+Dudas: ¿Cómo proteger correctamente las variables de entorno?
+
+Semana 5: Realizaremos pruebas con un usuario externo y prepararemos el análisis crítico y la sustentación.
+Enlace: Pendiente
+Dudas: ¿Cómo presentar claramente las limitaciones de la herramienta?
 
 ## 🛠️ Parte 3 — Stack técnico recomendado
 
-Todo es **gratuito y no exige tarjeta de crédito**. Tu proyecto final debería verse así:
+[Diseñador o usuario]
+          ↓
+[Interfaz web de ModaProtege]
+          ↓
+[LangChain / LangGraph]
+          ↓
+[Búsqueda en corpus jurídico]
+          ↓
+[Normas sobre derecho de autor y propiedad industrial]
+          ↓
+[Modelo de IA mediante OpenRouter]
+          ↓
+[Respuesta con citas y advertencia académica]
 
-```
-[Usuario] → [Interfaz web] → [Orquestación (LangChain)] → [Modelo (OpenRouter)]
-                                   ↕
-                          [Tu corpus normativo (RAG)]
-```
+Función de cada componente
+Interfaz web: permitirá al usuario describir una creación de moda o plantear una pregunta.
+LangChain o LangGraph: organizará la consulta y buscará información relevante dentro del corpus jurídico.
+RAG: permitirá que el asistente consulte las normas seleccionadas antes de responder.
+OpenRouter: proporcionará el modelo de inteligencia artificial encargado de redactar la respuesta.
+Corpus jurídico: contendrá exclusivamente fuentes públicas previamente seleccionadas.
+Sistema de citas: cada respuesta jurídica deberá indicar la norma utilizada.
 
-| Pieza | Herramienta recomendada | Para qué sirve (en cristiano) |
-| --- | --- | --- |
-| **Interfaz web** | **v0.dev** (genera una app Next.js) o **Streamlit** (si tu agente trabaja en Python) | Lo que el usuario ve: cajas de texto, botones. Se la describes a la IA y ella la construye. |
-| **Orquestación** | **LangChain / LangGraph** | El "cerebro intermedio": toma la pregunta del usuario, busca en tus normas, arma el prompt y llama al modelo. |
-| **Modelo (LLM)** | **OpenRouter** — modelos con etiqueta `:free` | El "cerebro" que redacta. OpenRouter te da acceso a modelos gratuitos con una sola cuenta y una sola API key. |
-| **Memoria de fuentes (RAG)** | LangChain + almacén de vectores (**Chroma** o **FAISS** en local; **Supabase** si necesitas base de datos en la nube) | La técnica para que el modelo responda **con tus normas** y no con lo que "recuerda" (que puede ser una alucinación jurídica). |
-| **Trazabilidad** *(opcional)* | **LangSmith** (plan gratuito) | Ver qué le pasó a cada respuesta por dentro. Útil para depurar. |
-
-> 🔑 **Regla de oro:** tu `OPENROUTER_API_KEY` va en una **variable de entorno**, jamás pegada en el código ni en el chat. Si una clave se filtra en GitHub, revócala de inmediato en openrouter.ai → Keys.
-
-Pídele a tu agente de IA que te explique esta arquitectura con tu proyecto concreto antes de escribir una línea de código.
+La clave de API utilizada para conectar el modelo se almacenará exclusivamente como variable de entorno y nunca será publicada en el repositorio.
 
 ---
 
 ## 🚀 Parte 4 — Ruta de despliegue
 
-Tu meta: **una URL pública** que cualquiera pueda abrir. Elige una ruta:
+El proyecto será desplegado en una plataforma gratuita que permita obtener una URL pública.
 
-### Opción A — Vercel ⭐ (recomendada, la del curso)
-1. Sube tu código a este repo de GitHub (ya lo tienes ✅).
-2. Crea cuenta gratis en [vercel.com](https://vercel.com) con tu GitHub.
-3. "Add New Project" → importa tu repo → Deploy.
-4. Cada `git push` re-despliega solo.
-- ✅ Ideal para Next.js/Streamlit (Streamlit via [streamlit.io/community-cloud](https://streamlit.io)) · gratis · sin servidor.
+La ruta inicial propuesta es:
 
-### Opción B — Render / Railway (plan gratuito)
-Si tu proyecto es Python o necesita un servidor corriendo: crea cuenta, conecta el repo, y te dan una URL pública. Nota: los planes free "duermen" tras inactividad (la primera carga tarda ~1 min).
+Desarrollar la herramienta en el repositorio de GitHub.
+Construir una interfaz web sencilla.
+Guardar las variables sensibles, como la API key, como variables de entorno.
+Conectar el repositorio con Vercel.
+Realizar el despliegue público.
+Probar la URL desde otro dispositivo o con un usuario externo.
+Registrar la evidencia de la prueba.
+URL pública
 
-### Opción C — Servidor propio o Docker *(solo si A y B no te dan lo que necesitas)*
-Si necesitas algo que Vercel no ofrece (ej. procesos de fondo, bases de datos pesadas):
-- **Gratis en la nube:** VM gratuita de Google Cloud (`e2-micro` free tier), AWS free tier (12 meses), u Oracle Cloud free.
-- **Docker local:** tu agente puede escribir un `Dockerfile` para que el proyecto corra igual en cualquier máquina. Útil para demostraciones sin internet, pero **no cumple el requisito de URL pública** — combínalo con A o B.
+URL: [Pendiente de despliegue]
 
-### Checklist de despliegue ✅
-- [ ] URL pública funciona en el navegador de otra persona (pídele a alguien que la abra)
-- [ ] La advertencia de la Parte 7 es **visible** en la interfaz
-- [ ] No hay API keys ni secretos en el código (verifica con una búsqueda de `sk-` en el repo)
-- [ ] Anota la URL aquí: **`[tu-url-publica]`**
-
-> El dominio propio (.com, .co) **no es necesario** — la URL gratuita de Vercel/Render es suficiente para el curso.
-
----
+Checklist
+ La URL pública funciona.
+ La herramienta muestra claramente su advertencia académica.
+ No existen claves API ni secretos publicados en GitHub.
+ La herramienta cita las fuentes jurídicas utilizadas.
+ Un usuario externo al curso probó la herramienta.
+ La evidencia de la prueba fue guardada en docs/evidencia-usuario.md.
 
 ## 🧠 Parte 5 — Guía de prompting para *vibe coding*
 
@@ -161,23 +171,45 @@ Tu competencia más transferible a la práctica profesional: **instruir bien a l
 > "Crea una interfaz web simple para mi asistente: un recuadro para escribir la consulta, el espacio de respuesta, la advertencia legal visible arriba, y el logo/nombre. Luego guíame para desplegarla gratis en Vercel con mi repo de GitHub. No sé programar: dime exactamente qué archivo tocar y qué copiar."
 </details>
 
----
+El desarrollo se realizará mediante vibe coding, utilizando inteligencia artificial como apoyo técnico.
+Nuestro papel como estudiantes de derecho será:
+
+Delimitar correctamente el problema jurídico.
+Seleccionar las fuentes jurídicas que integrarán el corpus.
+Diseñar las instrucciones del asistente.
+Crear casos de prueba.
+Revisar jurídicamente las respuestas generadas.
+Identificar errores, limitaciones y posibles alucinaciones.
+Mantener el alcance de la herramienta limitado.
+Principio principal del asistente
+
+El asistente deberá responder únicamente con información respaldada por las fuentes incorporadas en el corpus.
+
+Cuando no encuentre una fuente suficiente, deberá responder de forma clara que no cuenta con información suficiente dentro de su corpus para resolver la pregunta.
 
 ## ⚖️ Parte 6 — Ética, datos y responsabilidad
 
-Estas salvaguardas son **obligatorias** y hacen parte de la evaluación:
+Advertencia obligatoria
 
-- **Advertencia visible obligatoria.** Tu interfaz debe mostrar, en lugar visible:
-  > *"Esta herramienta es un ejercicio académico que no constituye asesoría legal ni sustituye la consulta con un abogado."*
-  - [ ] Implementada y visible en la interfaz
-- **Protección de datos (Ley 1581 de 2012).** Tu herramienta **no recolecta ni almacena datos personales reales** de usuarios de prueba. Los usuarios de prueba usan situaciones ficticias o datos inventados.
-  - [ ] Verificado: no guardo datos personales
-- **Corpus público.** Solo fuentes públicas: leyes, decretos, jurisprudencia publicada.
-  - [ ] Verificado
-- **Anti-alucinaciones.** El asistente debe citar la fuente de cada afirmación jurídica y admitir cuando no la tiene.
-  - [ ] Casos de prueba donde la herramienta se niega a inventar
+La interfaz mostrará de forma visible:
+"Esta herramienta es un ejercicio académico que no constituye asesoría legal ni sustituye la consulta con un abogado."
+Protección de datos
+La herramienta no solicitará ni almacenará datos personales reales de los usuarios de prueba.
+Los casos utilizados durante el desarrollo y las pruebas serán ficticios o anonimizados.
+El proyecto tendrá en cuenta los principios de protección de datos personales establecidos en la legislación colombiana.
+Corpus público
+El corpus estará compuesto únicamente por:
 
----
+Normas públicas.
+Decisiones o fuentes jurídicas públicas.
+Información institucional publicada por autoridades competentes.
+Prevención de alucinaciones
+
+El asistente deberá:
+Citar la fuente jurídica utilizada.
+Evitar inventar artículos, leyes o sentencias.
+Reconocer cuando el corpus no contiene información suficiente.
+Diferenciar entre una orientación académica y una conclusión jurídica definitiva.
 
 ## 🔍 Parte 7 — Análisis crítico (insumo de tu sustentación final)
 
@@ -202,13 +234,15 @@ Un abogado puede estudiar pruebas, documentos, contratos, antecedentes y circuns
 ## ✅ Parte 8 — Entregables finales (Definition of Done)
 
 Requisitos de entrega del curso — todos deben estar ✅:
+ Solución funcionando: Moda Protege responde consultas sobre la posible protección jurídica de creaciones de moda.
+ URL pública: La herramienta está disponible para ser utilizada desde un navegador.
+ Usuario real: Una persona externa al curso probó la herramienta.
+ Evidencia: La prueba fue documentada en docs/evidencia-usuario.md.
+ Repositorio actualizado: El repositorio contiene commits que muestran el desarrollo del proyecto.
+ Corpus jurídico conectado: Las respuestas citan las fuentes utilizadas.
+ Casos de prueba: Existen al menos cinco casos documentados.
+ Análisis crítico: La Parte 7 está completa.
+ Advertencia visible: La interfaz aclara que es un ejercicio académico y no asesoría legal.
+Enfoque que les recomiendo mantener
 
-- [ ] 🔗 **Solución funcionando**: resuelve el problema jurídico y está desplegada con URL pública.
-- [ ] 👤 **Usuario real**: al menos una persona externa al curso la usó, con evidencia (video corto o testimonio). Guarda la evidencia en `docs/evidencia-usuario.md`.
-- [ ] 📦 **Repositorio con historial**: este repo muestra tus avances semanales (commits + bitácora).
-- [ ] 🧠 **Análisis crítico**: Parte 7 completada.
-- [ ] 📋 Partes 1–7 de este README completas y al día.
 
----
-
-*Construido con asistencia de IA — como se enseña en este curso.* 🧑‍⚖️🤖
