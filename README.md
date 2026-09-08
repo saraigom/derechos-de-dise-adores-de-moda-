@@ -181,11 +181,21 @@ Estas salvaguardas son **obligatorias** y hacen parte de la evaluación:
 
 ## 🔍 Parte 7 — Análisis crítico (insumo de tu sustentación final)
 
-Responde con total honestidad — aquí es donde demuestras tu criterio jurídico:
+1. ¿Dónde falla nuestra herramienta?
+La primera limitación de nuestra herramienta es que no puede determinar  si una prenda o diseño específico está jurídicamente protegido. La protección de una creación puede depender de características concretas y de un análisis detallado que una descripción breve del usuario no siempre permite realizar.
+La segunda limitación es que la herramienta trabaja solamente con un corpus jurídico delimitado. Por esto, podría no considerar normas, decisiones judiciales o circunstancias particulares que sean relevantes para un caso real pero que no hayan sido incorporadas al sistema.
 
-1. **¿Dónde falla tu herramienta?** Describe 2 situaciones donde se equivoca o se queda corta.
-2. **¿Qué datos procesa?** Qué entra, qué se guarda, qué sale.
-3. **¿Por qué no reemplaza al abogado?** Argumenta en 5–8 frases.
+Por último se puede considerar el riesgo de que el usuario interprete una orientación académica como una conclusión jurídica definitiva. Por esta razón, la advertencia sobre la naturaleza académica de la herramienta debe permanecer visible.
+
+2. ¿Qué datos procesa?
+La herramienta procesa el texto que el usuario escribe para formular una pregunta o describir una situación ficticia relacionada con una creación de moda.
+Durante las pruebas del proyecto no se pediran nombres completos, documentos de identidad, direcciones ni otros datos personales reales.
+El sistema usa la consulta del usuario para buscar información relevante dentro del corpus jurídico y generar una respuesta.
+La salida consiste en una explicación académica acompañada de las fuentes jurídicas utilizadas y de una advertencia sobre la limitación de la herramienta.
+
+3. ¿Por qué no reemplaza a un abogado?
+Nuestra herramienta no reemplaza a un abogado ya que no realiza un análisis jurídico integral de cada caso concreto.
+Un abogado puede estudiar pruebas, documentos, contratos, antecedentes y circunstancias particulares que una herramienta basada en inteligencia artificial no necesariamente conoce. Además, la determinación de si existe una infracción o de qué mecanismo jurídico debe utilizarse puede requerir una valoración especializada. La herramienta trabaja únicamente con un corpus previamente seleccionado, por lo que puede carecer de información relevante para un caso real. También puede tener dificultades para interpretar correctamente descripciones incompletas o ambiguas proporcionadas por los usuarios. Por esta razón, ModaProtege tiene únicamente una finalidad académica y orientativa. Sus respuestas no constituyen asesoría jurídica profesional. Cuando una persona enfrente un conflicto real, deberá consultar a un abogado especializado o acudir a la autoridad competente.
 
 ---
 
