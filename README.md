@@ -24,18 +24,28 @@ Al final del proyecto, al menos un diseñador, estudiante de diseño o persona r
 
 ### 1.3 Qué hace y qué NO hace (alcance)
 ✅ Sí hace 
-Explicar qué mecanismos de protección jurídica pueden ser relevantes para una creación de moda
-Orientar al usuarios sobre la diferencia entre derecho de autor y protección de diseños industriales
-Identifica, con base en la descripción del usuario, qué normas del corpus podrían ser aplicables 
-Además de explicar los límites generales de la protección jurídica
+
+Explicar qué mecanismos de protección jurídica pueden ser relevantes para una creación de moda.
+
+Orientar al usuarios sobre la diferencia entre derecho de autor y protección de diseños industriales.
+
+Identifica, con base en la descripción del usuario, qué normas del corpus podrían ser aplicables.
+
+Además de explicar los límites generales de la protección jurídica.
+
 Finalmente puede advertir cuando esta información del corpus no es suficiente para responder estas dudas. 
 
 ❌ No hace 
-No va a prestar asesoría legal personalizada
-No va a determinar definitivamente si existe una infracción
-No va a inventar derechos ni normas cuando no encuentra una fuente
-No va a representar al usuario ante jueces, la SIC u otras autoridades
-No va a garantizar que una creación pueda ser registrada o protegida
+
+No va a prestar asesoría legal personalizada.
+
+No va a determinar definitivamente si existe una infracción.
+
+No va a inventar derechos ni normas cuando no encuentra una fuente.
+
+No va a representar al usuario ante jueces, la SIC u otras autoridades.
+
+No va a garantizar que una creación pueda ser registrada o protegida.
 
 ### 1.4 Marco jurídico y fuentes
 Las principales fuentes serán:
