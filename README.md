@@ -8,41 +8,47 @@
 
 ---
 
-Bienvenido/a a tu repositorio de proyecto. **Este archivo es tu tablero de mando**: aquí describes tu proyecto, planificas su desarrollo y dejas evidencia del avance. Lo vas a completar por partes, siguiendo el curso.
-
-📌 Si ya habías escrito una descripción de tu proyecto cuando creaste el repo, la encuentras intacta en `README-ORIGINAL.md`. Úsala como punto de partida para la Parte 1 — no empieces de cero.
-
-**No necesitas saber programar.** Todo el código lo construirás con asistencia de IA (*vibe coding*). Tu valor como estudiante de derecho está en el problema que eliges, las fuentes que alimentas, las instrucciones que diseñas y el juicio crítico con el que evalúas el resultado.
-
----
-
 ## 📋 Parte 1 — Descripción del proyecto
-
-> Completa cada sección con 3–10 frases. Sé concreto/a: esta descripción es la que tu IA usará como contexto y la que el docente usará para realimentarte.
-
 ### 1.1 El problema jurídico
-¿Qué problema **real del derecho colombiano** resuelve tu herramienta? ¿Quién lo sufre hoy y cómo lo resuelve sin tu herramienta?
+En Colombia los diseñadores pueden tener dificultades para poder identificar qué derechos protegen sus creaciones cuando estas mismas son copiadas o reproducidas por otras personas o empresas. Se desconocen los mecanismos jurídicos que pueden aplicar, como el derecho de autor o la protección de diseños industriales.
 
+Hoy en día, deben buscar información en diferentes fuentes o acudir a profesionales especializados, lo cual puede resultar difícil para los diseñadores independientes, estudiantes y los pequeños emprendimientos.
+
+Nuestra herramienta ofrecerá una orientación jurídica académica sobre los posibles mecanismos de protección de una creación de moda, con base en un corpus jurídico previamente seleccionado. No se determinará de manera definitiva si existe una infracción ni reemplazará la asesoría de un abogado.
 ### 1.2 Usuarios
-¿Quién va a usarla? Describe a tu usuario ideal en una frase (ej. *"un arrendatario bogotano que le subieron el canon de arrendamiento más del límite legal"*). Recuerda que al final necesitas **al menos un usuario real** que la pruebe.
+Nuestro usuario ideal sería un diseñador de moda colombiano, estudiante de diseño o emprendedor independiente que creó una prenda, accesorio o elemento visual y quiere conocer qué mecanismos jurídicos podrían proteger su creación frente a una posible copia.
+
+La herramienta también puede ser ayudar a los emprendimientos que hasta ahora están empezando de moda que quieren entender, en términos sencillos, qué derechos podrían tener sobre sus diseños.
+
+Al final del proyecto, al menos un diseñador, estudiante de diseño o persona relacionada con el sector de la moda probará la herramienta utilizando una situación ficticia
 
 ### 1.3 Qué hace y qué NO hace (alcance)
-| ✅ Sí hace | ❌ No hace |
-| --- | --- |
-| [funcionalidad 1] | [fuera de alcance 1] |
-| [funcionalidad 2] | [fuera de alcance 2] |
+✅ Sí hace 
+Explicar qué mecanismos de protección jurídica pueden ser relevantes para una creación de moda
+Orientar al usuarios sobre la diferencia entre derecho de autor y protección de diseños industriales
+Identifica, con base en la descripción del usuario, qué normas del corpus podrían ser aplicables 
+Además de explicar los límites generales de la protección jurídica
+Finalmente puede advertir cuando esta información del corpus no es suficiente para responder estas dudas. 
 
-*Consejo de abogado: un alcance pequeño y perfecto vale más que uno grande y roto.*
+❌ No hace 
+No va a prestar asesoría legal personalizada
+No va a determinar definitivamente si existe una infracción
+No va a inventar derechos ni normas cuando no encuentra una fuente
+No va a representar al usuario ante jueces, la SIC u otras autoridades
+No va a garantizar que una creación pueda ser registrada o protegida
 
 ### 1.4 Marco jurídico y fuentes
-¿Qué normas alimentan tu herramienta? Lista tu corpus normativo (leyes, decretos, sentencias — debe ser **pequeño y público**):
-- [ ] Norma/sentencia 1: [nombre + enlace]
-- [ ] Norma/sentencia 2: [nombre + enlace]
+Las principales fuentes serán:
+
+Decisión 351 de 1993 de la Comunidad Andina — Régimen Común sobre Derecho de Autor y Derechos Conexos.
+Decisión 486 de 2000 de la Comunidad Andina — Régimen Común sobre Propiedad Industrial, especialmente las disposiciones relacionadas con diseños industriales.
+Ley 23 de 1982 — Sobre derechos de autor en Colombia.
+Ley 44 de 1993 — Modificación y adición a la legislación sobre derecho de autor.
+Fuentes públicas oficiales de la Dirección Nacional de Derecho de Autor y de la Superintendencia de Industria y Comercio, únicamente cuando sean necesarias para explicar los mecanismos jurídicos incluidos en el corpus.
 
 ### 1.5 Nombre y lema
-Un nombre corto para tu herramienta y una frase que explique qué hace (la usarás en la demo del día de presentaciones).
-
----
+Nombre de la herramienta: Moda Protege
+Lema: Conocer que derechos pueden proteger tus diseños de moda en Colombia
 
 ## 🗺️ Parte 2 — Plan de desarrollo
 
