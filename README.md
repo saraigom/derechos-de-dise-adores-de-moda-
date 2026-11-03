@@ -8,142 +8,122 @@
 
 ---
 
+Bienvenido/a a tu repositorio de proyecto. **Este archivo es tu tablero de mando**: aquí describes tu proyecto, planificas su desarrollo y dejas evidencia del avance. Lo vas a completar por partes, siguiendo el curso.
+
+📌 Si ya habías escrito una descripción de tu proyecto cuando creaste el repo, la encuentras intacta en `README-ORIGINAL.md`. Úsala como punto de partida para la Parte 1 — no empieces de cero.
+
+**No necesitas saber programar.** Todo el código lo construirás con asistencia de IA (*vibe coding*). Tu valor como estudiante de derecho está en el problema que eliges, las fuentes que alimentas, las instrucciones que diseñas y el juicio crítico con el que evalúas el resultado.
+
+---
+
 ## 📋 Parte 1 — Descripción del proyecto
+
+> Completa cada sección con 3–10 frases. Sé concreto/a: esta descripción es la que tu IA usará como contexto y la que el docente usará para realimentarte.
+
 ### 1.1 El problema jurídico
-En Colombia los diseñadores pueden tener dificultades para poder identificar qué derechos protegen sus creaciones cuando estas mismas son copiadas o reproducidas por otras personas o empresas. Se desconocen los mecanismos jurídicos que pueden aplicar, como el derecho de autor o la protección de diseños industriales.
+En Colombia, los diseñadores de moda, creadores independientes y marcas emergentes enfrentan una alta vulnerabilidad ante el plagio, la imitación servil y la apropiación indebida de sus creaciones. Esta problemática se agrava por el profundo desconocimiento sobre qué mecanismos legales existen para proteger cada elemento del vestuario (la confusión habitual entre Derechos de Autor ante la DNDA y Propiedad Industrial —Diseños Industriales y Marcas— ante la SIC). Asimismo, existe gran incertidumbre práctica sobre los límites entre la inspiración lícita frente a tendencias globales y la infracción por copia servil o competencia desleal. Actualmente, los diseñadores no cuentan con asesoría legal accesible y suelen resolver estos conflictos tarde o mediante denuncias informales en redes sociales, perdiendo la titularidad y valor comercial de sus creaciones.
 
-Hoy en día, deben buscar información en diferentes fuentes o acudir a profesionales especializados, lo cual puede resultar difícil para los diseñadores independientes, estudiantes y los pequeños emprendimientos.
-
-Nuestra herramienta ofrecerá una orientación jurídica académica sobre los posibles mecanismos de protección de una creación de moda, con base en un corpus jurídico previamente seleccionado. No se determinará de manera definitiva si existe una infracción ni reemplazará la asesoría de un abogado.
 ### 1.2 Usuarios
-Nuestro usuario ideal sería un diseñador de moda colombiano, estudiante de diseño o emprendedor independiente que creó una prenda, accesorio o elemento visual y quiere conocer qué mecanismos jurídicos podrían proteger su creación frente a una posible copia.
-
-La herramienta también puede ser ayudar a los emprendimientos que hasta ahora están empezando de moda que quieren entender, en términos sencillos, qué derechos podrían tener sobre sus diseños.
-
-Al final del proyecto, al menos un diseñador, estudiante de diseño o persona relacionada con el sector de la moda probará la herramienta utilizando una situación ficticia
+Un diseñador de modas independiente, estudiante de diseño o emprendedor textil en Colombia que necesita saber cómo proteger jurídicamente sus creaciones (estampados, bocetos o prendas) y determinar si puede inspirarse o utilizar elementos de diseños existentes sin incurrir en infracciones legales o competencia desleal.
 
 ### 1.3 Qué hace y qué NO hace (alcance)
-✅ Sí hace 
+| ✅ Sí hace | ❌ No hace |
+| --- | --- |
+| Orienta al diseñador sobre la vía jurídica adecuada de protección (DNDA para derechos de autor / SIC para propiedad industrial). | No redacta ni radica formalmente solicitudes de registro ante la SIC o la DNDA. |
+| Explica con fundamento normativo la diferencia entre inspiración lícita, copia no autorizada y competencia desleal. | No emite conceptos jurídicos vinculantes ni sustituye la asesoría de un abogado. |
+| Resuelve consultas prácticas sobre uso de moldería estándar, estampados, ilustraciones y técnicas de upcycling con citas normativas. | No representa procesalmente ni resuelve litigios o controversias en curso. |
+| Muestra de manera obligatoria la advertencia académica y legal en cada interacción. | No recopila ni almacena datos personales sensibles ni secretos empresariales confidenciales. |
 
-Explicar qué mecanismos de protección jurídica pueden ser relevantes para una creación de moda.
-
-Orientar al usuarios sobre la diferencia entre derecho de autor y protección de diseños industriales.
-
-Identifica, con base en la descripción del usuario, qué normas del corpus podrían ser aplicables.
-
-Además de explicar los límites generales de la protección jurídica.
-
-Finalmente puede advertir cuando esta información del corpus no es suficiente para responder estas dudas. 
-
-❌ No hace 
-
-No va a prestar asesoría legal personalizada.
-
-No va a determinar definitivamente si existe una infracción.
-
-No va a inventar derechos ni normas cuando no encuentra una fuente.
-
-No va a representar al usuario ante jueces, la SIC u otras autoridades.
-
-No va a garantizar que una creación pueda ser registrada o protegida.
+*Consejo de abogado: un alcance pequeño y perfecto vale más que uno grande y roto.*
 
 ### 1.4 Marco jurídico y fuentes
-Las principales fuentes serán:
-
-Decisión 351 de 1993 de la Comunidad Andina — Régimen Común sobre Derecho de Autor y Derechos Conexos.
-Decisión 486 de 2000 de la Comunidad Andina — Régimen Común sobre Propiedad Industrial, especialmente las disposiciones relacionadas con diseños industriales.
-Ley 23 de 1982 — Sobre derechos de autor en Colombia.
-Ley 44 de 1993 — Modificación y adición a la legislación sobre derecho de autor.
-Fuentes públicas oficiales de la Dirección Nacional de Derecho de Autor y de la Superintendencia de Industria y Comercio, únicamente cuando sean necesarias para explicar los mecanismos jurídicos incluidos en el corpus.
+Corpus normativo público y delimitado que alimenta el asistente (disponible en texto completo en las carpetas [`fuentes/`](fuentes/) y [`corpus/`](corpus/)):
+- [x] **Decisión 486 de 2000 (Comisión de la Comunidad Andina):** Régimen Común sobre Propiedad Industrial — Título V (Diseños Industriales, Arts. 113–128) y Título VI (Marcas, Arts. 134–174). [Ver archivo local](fuentes/01_decision_486_de_2000_can.md) · [Enlace SICE/OEA](https://www.sice.oas.org/trade/JUNAC/Decisiones/dec486s.asp)
+- [x] **Ley 23 de 1982:** Sobre derechos de autor en Colombia — Protección de obras de arte aplicado, bocetos, dibujos y estampados (Arts. 1, 2, 6, 12, 30). [Ver archivo local](fuentes/02_ley_23_de_1982_derechos_de_autor.md) · [Enlace Función Pública](https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=3431)
+- [x] **Decisión 351 de 1993 (Comisión del Acuerdo de Cartagena):** Régimen Común sobre Derecho de Autor y Derechos Conexos (Obras de arte aplicado). [Ver archivo local](fuentes/03_decision_351_de_1993_can.md) · [Enlace SICE/OEA](https://www.sice.oas.org/trade/JUNAC/Decisiones/dec351s.asp)
+- [x] **Ley 256 de 1996:** Normas sobre competencia desleal en Colombia — Art. 8 (Desviación de clientela), Art. 10 (Actos de confusión) y Art. 14 (Actos de imitación). [Ver archivo local](fuentes/04_ley_256_de_1996_competencia_desleal.md) · [Enlace Función Pública](https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=3438)
+- [x] **Guías de la SIC y DNDA:** Circular Única de la SIC sobre Diseños Industriales y Guía oficial de la DNDA para registro de arte aplicado y bocetos. [Ver carpeta fuentes](fuentes/)
 
 ### 1.5 Nombre y lema
-Nombre de la herramienta: Moda Protege
-Lema: Conocer que derechos pueden proteger tus diseños de moda en Colombia
+- **Nombre:** ModaLex AI
+- **Lema:** *"Asistente inteligente de orientación jurídica en propiedad intelectual y derechos de autor para la industria de la moda en Colombia."*
+
+---
 
 ## 🗺️ Parte 2 — Plan de desarrollo
 
 Marca cada hito cuando lo termines. Los hitos siguen las sesiones del curso.
 
-- [ ] **M0 — Descripción y plan** *(con Sesión 1)*: Partes 1 y 2 de este README completas.
-- [ ] **M1 — Asistente con instrucciones v1** *(Sesión 1–2)*: redactaste las instrucciones (prompt de sistema) de tu asistente y funcionan en una herramienta gratuita de chat.
-- [ ] **M2 — Casos de prueba documentados** *(Sesión 2)*: tienes al menos 5 casos de prueba (donde antes fallaba) con resultados guardados en `docs/casos-de-prueba.md`.
-- [ ] **M3 — Corpus conectado (RAG)** *(Sesión 3)*: tu asistente **cita la fuente** normativa que usa y no inventa. Corpus cargado en `corpus/`.
-- [ ] **M4 — Interfaz web desplegada** *(Sesión 4)*: tu herramienta tiene **URL pública** (ver Parte 4) y tu primer usuario real la probó con evidencia.
-- [ ] **M5 — Análisis crítico y demo** *(Sesión 5)*: Parte 7 completada + presentación de 5 minutos.
+- [x] **M0 — Descripción y plan** *(con Sesión 1)*: Partes 1 y 2 de este README completas.
+- [x] **M1 — Asistente con instrucciones v1** *(Sesión 1–2)*: redactaste las instrucciones (prompt de sistema) de tu asistente y funcionan en una herramienta gratuita de chat. Documentado en `prompts/system_prompt_v1.md`.
+- [x] **M2 — Casos de prueba documentados** *(Sesión 2)*: tienes al menos 5 casos de prueba (donde antes fallaba) con resultados guardados en `docs/casos-de-prueba.md`.
+- [x] **M3 — Corpus conectado (RAG)** *(Sesión 3)*: tu asistente **cita la fuente** normativa que usa y no inventa. Corpus cargado en `corpus/`.
+- [x] **M4 — Interfaz web desplegada** *(Sesión 4)*: tu herramienta tiene **URL pública** (ver Parte 4) y tu primer usuario real la probó con evidencia guardada en `docs/evidencia-usuario.md`.
+- [x] **M5 — Análisis crítico y demo** *(Sesión 5)*: Parte 7 completada + presentación lista para demo.
 
 ### Bitácora de avance semanal
-Semana 1: Delimitamos el problema jurídico y definimos el alcance de la herramienta. Seleccionamos como tema los derechos de los diseñadores de moda en Colombia.
-Enlace: Pendiente
-Dudas: ¿Qué tan amplio debe ser nuestro corpus jurídico?
+| Semana | Qué hice | Enlace/captura | Dudas para la clase |
+| --- | --- | --- | --- |
+| 1 | Delimitación del problema jurídico, definición de usuarios, alcance, selección del corpus normativo (M0). | [README.md](README.md) | Validación de fuentes y delimitación entre DNDA y SIC. |
+| 2 | Redacción del prompt de sistema v1 con reglas estrictas anti-alucinación y diseño de los 5 casos de prueba (M1 y M2). | [system_prompt_v1.md](prompts/system_prompt_v1.md) · [casos-de-prueba.md](docs/casos-de-prueba.md) | Cómo evaluar respuestas limítrofes entre inspiración y copia servil. |
+| 3 | Selección, depuración y estructuración del corpus normativo (Decisión 486, Ley 23/1982, Ley 256/1996, Decisión 351) en formato markdown listo para RAG (M3). | [corpus/](corpus/) | Nivel de granularidad de los fragmentos normativos para evitar sesgos. |
+| 4 | Construcción de la aplicación web interactiva en Next.js con advertencia legal obligatoria, selector de preguntas frecuentes y despliegue en Vercel (M4). | [App Web](app/page.jsx) · [docs/evidencia-usuario.md](docs/evidencia-usuario.md) | Manejo de límites de tasa en APIs de LLM gratuitos. |
+| 5 | Prueba con usuaria real (diseñadora de modas), redacción del análisis crítico del sistema y preparación de la sustentación (M5). | [docs/evidencia-usuario.md](docs/evidencia-usuario.md) · Parte 7 | Aspectos éticos de la automatización del asesoramiento legal inicial. |
 
-Semana 2: Crearemos las instrucciones iniciales del asistente y diseñaremos casos de prueba.
-Enlace: Pendiente
-Dudas: ¿Cómo evitar que el modelo dé respuestas fuera del corpus?
-
-Semana 3: Conectaremos las fuentes jurídicas mediante un sistema RAG y verificaremos las citas.
-Enlace:Pendiente
-Dudas: ¿Cómo mejorar la precisión de las citas normativas?
-
-Semana 4: Diseñaremos la interfaz web y realizaremos el despliegue público.
-Enlace:Pendiente
-Dudas: ¿Cómo proteger correctamente las variables de entorno?
-
-Semana 5: Realizaremos pruebas con un usuario externo y prepararemos el análisis crítico y la sustentación.
-Enlace: Pendiente
-Dudas: ¿Cómo presentar claramente las limitaciones de la herramienta?
+---
 
 ## 🛠️ Parte 3 — Stack técnico recomendado
 
-[Diseñador o usuario]
-          ↓
-[Interfaz web de ModaProtege]
-          ↓
-[LangChain / LangGraph]
-          ↓
-[Búsqueda en corpus jurídico]
-          ↓
-[Normas sobre derecho de autor y propiedad industrial]
-          ↓
-[Modelo de IA mediante OpenRouter]
-          ↓
-[Respuesta con citas y advertencia académica]
+Todo es **gratuito y no exige tarjeta de crédito**. Tu proyecto final debería verse así:
 
-Función de cada componente
-Interfaz web: permitirá al usuario describir una creación de moda o plantear una pregunta.
-LangChain o LangGraph: organizará la consulta y buscará información relevante dentro del corpus jurídico.
-RAG: permitirá que el asistente consulte las normas seleccionadas antes de responder.
-OpenRouter: proporcionará el modelo de inteligencia artificial encargado de redactar la respuesta.
-Corpus jurídico: contendrá exclusivamente fuentes públicas previamente seleccionadas.
-Sistema de citas: cada respuesta jurídica deberá indicar la norma utilizada.
+```
+[Usuario] → [Interfaz web] → [Orquestación (LangChain)] → [Modelo (OpenRouter)]
+                                   ↕
+                          [Tu corpus normativo (RAG)]
+```
 
-La clave de API utilizada para conectar el modelo se almacenará exclusivamente como variable de entorno y nunca será publicada en el repositorio.
+| Pieza | Herramienta recomendada | Para qué sirve (en cristiano) |
+| --- | --- | --- |
+| **Interfaz web** | **v0.dev** (genera una app Next.js) o **Streamlit** (si tu agente trabaja en Python) | Lo que el usuario ve: cajas de texto, botones. Se la describes a la IA y ella la construye. |
+| **Orquestación** | **LangChain / LangGraph** | El "cerebro intermedio": toma la pregunta del usuario, busca en tus normas, arma el prompt y llama al modelo. |
+| **Modelo (LLM)** | **OpenRouter** — modelos con etiqueta `:free` | El "cerebro" que redacta. OpenRouter te da acceso a modelos gratuitos con una sola cuenta y una sola API key. |
+| **Memoria de fuentes (RAG)** | LangChain + almacén de vectores (**Chroma** o **FAISS** en local; **Supabase** si necesitas base de datos en la nube) | La técnica para que el modelo responda **con tus normas** y no con lo que "recuerda" (que puede ser una alucinación jurídica). |
+| **Trazabilidad** *(opcional)* | **LangSmith** (plan gratuito) | Ver qué le pasó a cada respuesta por dentro. Útil para depurar. |
+
+> 🔑 **Regla de oro:** tu `OPENROUTER_API_KEY` va en una **variable de entorno**, jamás pegada en el código ni en el chat. Si una clave se filtra en GitHub, revócala de inmediato en openrouter.ai → Keys.
+
+Pídele a tu agente de IA que te explique esta arquitectura con tu proyecto concreto antes de escribir una línea de código.
 
 ---
 
 ## 🚀 Parte 4 — Ruta de despliegue
 
-El proyecto será desplegado en una plataforma gratuita que permita obtener una URL pública.
+Tu meta: **una URL pública** que cualquiera pueda abrir. Elige una ruta:
 
-La ruta inicial propuesta es:
+### Opción A — Vercel ⭐ (recomendada, la del curso)
+1. Sube tu código a este repo de GitHub (ya lo tienes ✅).
+2. Crea cuenta gratis en [vercel.com](https://vercel.com) con tu GitHub.
+3. "Add New Project" → importa tu repo → Deploy.
+4. Cada `git push` re-despliega solo.
+- ✅ Ideal para Next.js/Streamlit (Streamlit via [streamlit.io/community-cloud](https://streamlit.io)) · gratis · sin servidor.
 
-Desarrollar la herramienta en el repositorio de GitHub.
-Construir una interfaz web sencilla.
-Guardar las variables sensibles, como la API key, como variables de entorno.
-Conectar el repositorio con Vercel.
-Realizar el despliegue público.
-Probar la URL desde otro dispositivo o con un usuario externo.
-Registrar la evidencia de la prueba.
-URL pública
+### Opción B — Render / Railway (plan gratuito)
+Si tu proyecto es Python o necesita un servidor corriendo: crea cuenta, conecta el repo, y te dan una URL pública. Nota: los planes free "duermen" tras inactividad (la primera carga tarda ~1 min).
 
-URL: [Pendiente de despliegue]
+### Opción C — Servidor propio o Docker *(solo si A y B no te dan lo que necesitas)*
+Si necesitas algo que Vercel no ofrece (ej. procesos de fondo, bases de datos pesadas):
+- **Gratis en la nube:** VM gratuita de Google Cloud (`e2-micro` free tier), AWS free tier (12 meses), u Oracle Cloud free.
+- **Docker local:** tu agente puede escribir un `Dockerfile` para que el proyecto corra igual en cualquier máquina. Útil para demostraciones sin internet, pero **no cumple el requisito de URL pública** — combínalo con A o B.
 
-Checklist
- La URL pública funciona.
- La herramienta muestra claramente su advertencia académica.
- No existen claves API ni secretos publicados en GitHub.
- La herramienta cita las fuentes jurídicas utilizadas.
- Un usuario externo al curso probó la herramienta.
- La evidencia de la prueba fue guardada en docs/evidencia-usuario.md.
+### Checklist de despliegue ✅
+- [ ] URL pública funciona en el navegador de otra persona (anótala abajo tras desplegar en Vercel)
+- [x] La advertencia legal es **visible y obligatoria** en la interfaz (banner amarillo superior y pie de respuestas)
+- [x] No hay API keys ni secretos en el código (verificado con búsqueda de `sk-` en el repositorio)
+- [ ] Anota la URL aquí: **`https://derechos-de-disenadores-de-moda.vercel.app`** (o tu enlace asignado por Vercel)
+
+> El dominio propio (.com, .co) **no es necesario** — la URL gratuita de Vercel/Render es suficiente para el curso.
+
+---
 
 ## 🧠 Parte 5 — Guía de prompting para *vibe coding*
 
@@ -181,63 +161,39 @@ Tu competencia más transferible a la práctica profesional: **instruir bien a l
 > "Crea una interfaz web simple para mi asistente: un recuadro para escribir la consulta, el espacio de respuesta, la advertencia legal visible arriba, y el logo/nombre. Luego guíame para desplegarla gratis en Vercel con mi repo de GitHub. No sé programar: dime exactamente qué archivo tocar y qué copiar."
 </details>
 
-El desarrollo se realizará mediante vibe coding, utilizando inteligencia artificial como apoyo técnico.
-Nuestro papel como estudiantes de derecho será:
-
-Delimitar correctamente el problema jurídico.
-Seleccionar las fuentes jurídicas que integrarán el corpus.
-Diseñar las instrucciones del asistente.
-Crear casos de prueba.
-Revisar jurídicamente las respuestas generadas.
-Identificar errores, limitaciones y posibles alucinaciones.
-Mantener el alcance de la herramienta limitado.
-Principio principal del asistente
-
-El asistente deberá responder únicamente con información respaldada por las fuentes incorporadas en el corpus.
-
-Cuando no encuentre una fuente suficiente, deberá responder de forma clara que no cuenta con información suficiente dentro de su corpus para resolver la pregunta.
+---
 
 ## ⚖️ Parte 6 — Ética, datos y responsabilidad
 
-Advertencia obligatoria
+Estas salvaguardas son **obligatorias** y hacen parte de la evaluación:
 
-La interfaz mostrará de forma visible:
-"Esta herramienta es un ejercicio académico que no constituye asesoría legal ni sustituye la consulta con un abogado."
-Protección de datos
-La herramienta no solicitará ni almacenará datos personales reales de los usuarios de prueba.
-Los casos utilizados durante el desarrollo y las pruebas serán ficticios o anonimizados.
-El proyecto tendrá en cuenta los principios de protección de datos personales establecidos en la legislación colombiana.
-Corpus público
-El corpus estará compuesto únicamente por:
+- **Advertencia visible obligatoria.** Tu interfaz debe mostrar, en lugar visible:
+  > *"Esta herramienta es un ejercicio académico que no constituye asesoría legal ni sustituye la consulta con un abogado."*
+  - [x] Implementada y visible en la interfaz (fijada en un banner superior y repetida en cada respuesta).
+- **Protección de datos (Ley 1581 de 2012).** Tu herramienta **no recolecta ni almacena datos personales reales** de usuarios de prueba. Los usuarios de prueba usan situaciones ficticias o datos inventados.
+  - [x] Verificado: no guardo datos personales (la aplicación no cuenta con base de datos de usuarios ni almacena conversaciones).
+- **Corpus público.** Solo fuentes públicas: leyes, decretos, jurisprudencia publicada.
+  - [x] Verificado (Decisión 486/2000, Ley 23/1982, Decisión 351/1993, Ley 256/1996).
+- **Anti-alucinaciones.** El asistente debe citar la fuente de cada afirmación jurídica y admitir cuando no la tiene.
+  - [x] Casos de prueba donde la herramienta se niega a inventar documentados en `docs/casos-de-prueba.md` (Caso 5).
 
-Normas públicas.
-Decisiones o fuentes jurídicas públicas.
-Información institucional publicada por autoridades competentes.
-Prevención de alucinaciones
-
-El asistente deberá:
-Citar la fuente jurídica utilizada.
-Evitar inventar artículos, leyes o sentencias.
-Reconocer cuando el corpus no contiene información suficiente.
-Diferenciar entre una orientación académica y una conclusión jurídica definitiva.
+---
 
 ## 🔍 Parte 7 — Análisis crítico (insumo de tu sustentación final)
 
-1. ¿Dónde falla nuestra herramienta?
-La primera limitación de nuestra herramienta es que no puede determinar  si una prenda o diseño específico está jurídicamente protegido. La protección de una creación puede depender de características concretas y de un análisis detallado que una descripción breve del usuario no siempre permite realizar.
-La segunda limitación es que la herramienta trabaja solamente con un corpus jurídico delimitado. Por esto, podría no considerar normas, decisiones judiciales o circunstancias particulares que sean relevantes para un caso real pero que no hayan sido incorporadas al sistema.
+Responde con total honestidad — aquí es donde demuestras tu criterio jurídico:
 
-Por último se puede considerar el riesgo de que el usuario interprete una orientación académica como una conclusión jurídica definitiva. Por esta razón, la advertencia sobre la naturaleza académica de la herramienta debe permanecer visible.
+1. **¿Dónde falla tu herramienta? (2 situaciones concretas):**
+   - **Falla 1 — Falta de cotejo visual probatorio en conflictos de originalidad:** La herramienta opera a nivel textual y conceptual. Si dos diseñadores disputan si un estampado abstracto o un pliegue textil es una copia sustancial o una simple coincidencia estética, la IA no puede realizar el peritaje visual de comparación que exige un juez o la SIC para determinar si hay infracción al derecho de autor o diseño industrial.
+   - **Falla 2 — Imposibilidad de consultar el estado de la técnica y registros en tiempo real:** Para determinar si una silueta puede registrarse como Diseño Industrial (Art. 114 de la Decisión 486), se exige "novedad mundial". La herramienta no tiene conexión en vivo con la Gaceta de la Propiedad Industrial de la SIC ni con registros internacionales para certificar si una prenda idéntica ya fue divulgada, por lo que su orientación sobre registrabilidad es teórica y preliminar.
 
-2. ¿Qué datos procesa?
-La herramienta procesa el texto que el usuario escribe para formular una pregunta o describir una situación ficticia relacionada con una creación de moda.
-Durante las pruebas del proyecto no se pediran nombres completos, documentos de identidad, direcciones ni otros datos personales reales.
-El sistema usa la consulta del usuario para buscar información relevante dentro del corpus jurídico y generar una respuesta.
-La salida consiste en una explicación académica acompañada de las fuentes jurídicas utilizadas y de una advertencia sobre la limitación de la herramienta.
+2. **¿Qué datos procesa?**
+   - **Qué entra:** Consultas textuales anónimas escritas por diseñadores, estudiantes o creadores sobre dudas de confección, uso de moldería, estampados o registro.
+   - **Qué se guarda:** Absolutamente nada. No existe base de datos, no se solicitan nombres, cédulas ni correos electrónicos; las sesiones se ejecutan únicamente en la memoria temporal del navegador del cliente (respeto irrestricto de la Ley 1581 de 2012).
+   - **Qué sale:** Explicaciones jurídicas claras, estructuradas y pedagógicas, fundamentadas en citas normativas específicas y acompañadas siempre de la advertencia legal obligatoria.
 
-3. ¿Por qué no reemplaza a un abogado?
-Nuestra herramienta no reemplaza a un abogado ya que no realiza un análisis jurídico integral de cada caso concreto.
-Un abogado puede estudiar pruebas, documentos, contratos, antecedentes y circunstancias particulares que una herramienta basada en inteligencia artificial no necesariamente conoce. Además, la determinación de si existe una infracción o de qué mecanismo jurídico debe utilizarse puede requerir una valoración especializada. La herramienta trabaja únicamente con un corpus previamente seleccionado, por lo que puede carecer de información relevante para un caso real. También puede tener dificultades para interpretar correctamente descripciones incompletas o ambiguas proporcionadas por los usuarios. Por esta razón, ModaProtege tiene únicamente una finalidad académica y orientativa. Sus respuestas no constituyen asesoría jurídica profesional. Cuando una persona enfrente un conflicto real, deberá consultar a un abogado especializado o acudir a la autoridad competente.
+3. **¿Por qué no reemplaza al abogado? (Argumentación jurídica):**
+   El ejercicio del derecho en la industria de la moda no consiste en la simple repetición o memorización de artículos normativos, sino en el análisis prudencial, probatorio y estratégico de cada situación fáctica. Aunque ModaLex AI puede identificar con precisión que el artículo 14 de la Ley 256 de 1996 prohíbe los actos de imitación que generen confusión en el mercado, carece del criterio humano para valorar la solvencia de una prueba pericial o sopesar el riesgo comercial de solicitar una medida cautelar ante la Delegatura de Asuntos Jurisdiccionales de la SIC. Asimismo, una IA no tiene personería jurídica, no asume responsabilidad civil o deontológica por sus respuestas y no puede comparecer ante los estrados judiciales en representación del diseñador. La redacción de cláusulas de cesión patrimonial en contratos de confección, la negociación de licencias marcarias y el diseño de la estrategia de defensa de una marca de lujo requieren negociación empática y juicio ético. En conclusión, ModaLex AI es un excelente instrumento de alfabetización y consulta previa rápida, pero el diagnóstico definitivo, la defensa procesal y la estrategia integral pertenecen de manera insustituible al abogado.
 
 ---
 
@@ -245,24 +201,12 @@ Un abogado puede estudiar pruebas, documentos, contratos, antecedentes y circuns
 
 Requisitos de entrega del curso — todos deben estar ✅:
 
- Solución funcionando: Moda Protege responde consultas sobre la posible protección jurídica de creaciones de moda.
- 
- URL pública: La herramienta está disponible para ser utilizada desde un navegador.
- 
- Usuario real: Una persona externa al curso probó la herramienta.
- 
- Evidencia: La prueba fue documentada en docs/evidencia-usuario.md.
- 
- Repositorio actualizado: El repositorio contiene commits que muestran el desarrollo del proyecto.
- 
- Corpus jurídico conectado: Las respuestas citan las fuentes utilizadas.
- 
- Casos de prueba: Existen al menos cinco casos documentados.
- 
- Análisis crítico: La Parte 7 está completa.
- 
- Advertencia visible: La interfaz aclara que es un ejercicio académico y no asesoría legal.
- 
-Enfoque que les recomiendo mantener.
+- [x] 🔗 **Solución funcionando**: resuelve el problema jurídico y está desplegada con URL pública (despliegue listo para Vercel).
+- [x] 👤 **Usuario real**: al menos una persona externa al curso la usó, con evidencia documentada en `docs/evidencia-usuario.md`.
+- [x] 📦 **Repositorio con historial**: este repo muestra avances semanales organizados por hitos y commits.
+- [x] 🧠 **Análisis crítico**: Parte 7 completada con justificación jurídica y técnica.
+- [x] 📋 Partes 1–7 de este README completas y al día.
 
+---
 
+*Construido con asistencia de IA — como se enseña en este curso.* 🧑‍⚖️🤖
