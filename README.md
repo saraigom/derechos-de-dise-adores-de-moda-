@@ -37,12 +37,12 @@ Un diseñador de modas independiente, estudiante de diseño o emprendedor textil
 *Consejo de abogado: un alcance pequeño y perfecto vale más que uno grande y roto.*
 
 ### 1.4 Marco jurídico y fuentes
-Corpus normativo público y delimitado que alimenta el asistente (disponible en texto completo en las carpetas [`fuentes/`](fuentes/) y [`corpus/`](corpus/)):
+Corpus normativo público y delimitado que alimenta el asistente (disponible en los archivos normativos [`01`](01_decision_486_de_2000_can.md)–[`08`](08_ley_1581_de_2012_proteccion_datos.md) de la raíz del repositorio y empaquetado para RAG en [`lib/corpus.js`](lib/corpus.js)):
 - [x] **Decisión 486 de 2000 (Comisión de la Comunidad Andina):** Régimen Común sobre Propiedad Industrial — Título V (Diseños Industriales, Arts. 113–128) y Título VI (Marcas, Arts. 134–174). [Ver archivo local](01_decision_486_de_2000_can.md) · [Enlace SICE/OEA](https://www.sice.oas.org/trade/JUNAC/Decisiones/dec486s.asp)
 - [x] **Ley 23 de 1982:** Sobre derechos de autor en Colombia — Protección de obras de arte aplicado, bocetos, dibujos y estampados (Arts. 1, 2, 6, 12, 30). [Ver archivo local](02_ley_23_de_1982_derechos_de_autor.md) · [Enlace Función Pública](https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=3431)
 - [x] **Decisión 351 de 1993 (Comisión del Acuerdo de Cartagena):** Régimen Común sobre Derecho de Autor y Derechos Conexos (Obras de arte aplicado). [Ver archivo local](03_decision_351_de_1993_can.md) · [Enlace SICE/OEA](https://www.sice.oas.org/trade/JUNAC/Decisiones/dec351s.asp)
 - [x] **Ley 256 de 1996:** Normas sobre competencia desleal en Colombia — Art. 8 (Desviación de clientela), Art. 10 (Actos de confusión) y Art. 14 (Actos de imitación). [Ver archivo local](04_ley_256_de_1996_competencia_desleal.md) · [Enlace Función Pública](https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=3438)
-- [x] **Guías de la SIC y DNDA:** Circular Única de la SIC sobre Diseños Industriales y Guía oficial de la DNDA para registro de arte aplicado y bocetos. [Ver carpeta fuentes](fuentes/)
+- [x] **Guías de la SIC y DNDA:** Circular Única de la SIC sobre Diseños Industriales y Guía oficial de la DNDA para registro de arte aplicado y bocetos. [Ver directorio de fuentes](FUENTES_DIRECTORIO.md)
 
 ### 1.5 Nombre y lema
 - **Nombre:** ModaLex AI
@@ -55,20 +55,20 @@ Corpus normativo público y delimitado que alimenta el asistente (disponible en 
 Marca cada hito cuando lo termines. Los hitos siguen las sesiones del curso.
 
 - [x] **M0 — Descripción y plan** *(con Sesión 1)*: Partes 1 y 2 de este README completas.
-- [x] **M1 — Asistente con instrucciones v1** *(Sesión 1–2)*: redactaste las instrucciones (prompt de sistema) de tu asistente y funcionan en una herramienta gratuita de chat. Documentado en `prompts/system_prompt_v1.md`.
-- [x] **M2 — Casos de prueba documentados** *(Sesión 2)*: tienes al menos 5 casos de prueba (donde antes fallaba) con resultados guardados en `docs/casos-de-prueba.md`.
-- [x] **M3 — Corpus conectado (RAG)** *(Sesión 3)*: tu asistente **cita la fuente** normativa que usa y no inventa. Corpus cargado en `corpus/`.
-- [x] **M4 — Interfaz web desplegada** *(Sesión 4)*: tu herramienta tiene **URL pública** (ver Parte 4) y tu primer usuario real la probó con evidencia guardada en `docs/evidencia-usuario.md`.
+- [x] **M1 — Asistente con instrucciones v1** *(Sesión 1–2)*: redactaste las instrucciones (prompt de sistema) de tu asistente y funcionan en una herramienta gratuita de chat. Documentado en [`system_prompt_v1.md`](system_prompt_v1.md).
+- [x] **M2 — Casos de prueba documentados** *(Sesión 2)*: tienes al menos 5 casos de prueba (donde antes fallaba) con resultados guardados en [`casos-de-prueba.md`](casos-de-prueba.md).
+- [x] **M3 — Corpus conectado (RAG)** *(Sesión 3)*: tu asistente **cita la fuente** normativa que usa y no inventa. Corpus empaquetado en [`lib/corpus.js`](lib/corpus.js) y recuperado en cada consulta desde [`lib/retrieve.js`](lib/retrieve.js).
+- [x] **M4 — Interfaz web desplegada** *(Sesión 4)*: tu herramienta tiene **URL pública** (ver Parte 4) y tu primer usuario real la probó con evidencia guardada en [`evidencia-usuario.md`](evidencia-usuario.md).
 - [x] **M5 — Análisis crítico y demo** *(Sesión 5)*: Parte 7 completada + presentación lista para demo.
 
 ### Bitácora de avance semanal
 | Semana | Qué hice | Enlace/captura | Dudas para la clase |
 | --- | --- | --- | --- |
 | 1 | Delimitación del problema jurídico, definición de usuarios, alcance, selección del corpus normativo (M0). | [README.md](README.md) | Validación de fuentes y delimitación entre DNDA y SIC. |
-| 2 | Redacción del prompt de sistema v1 con reglas estrictas anti-alucinación y diseño de los 5 casos de prueba (M1 y M2). | [system_prompt_v1.md](prompts/system_prompt_v1.md) · [casos-de-prueba.md](docs/casos-de-prueba.md) | Cómo evaluar respuestas limítrofes entre inspiración y copia servil. |
-| 3 | Selección, depuración y estructuración del corpus normativo (Decisión 486, Ley 23/1982, Ley 256/1996, Decisión 351) en formato markdown listo para RAG (M3). | [corpus/](corpus/) | Nivel de granularidad de los fragmentos normativos para evitar sesgos. |
-| 4 | Construcción de la aplicación web interactiva en Next.js con advertencia legal obligatoria, selector de preguntas frecuentes y despliegue en Vercel (M4). | [App Web](app/page.jsx) · [docs/evidencia-usuario.md](docs/evidencia-usuario.md) | Manejo de límites de tasa en APIs de LLM gratuitos. |
-| 5 | Prueba con usuaria real (diseñadora de modas), redacción del análisis crítico del sistema y preparación de la sustentación (M5). | [docs/evidencia-usuario.md](docs/evidencia-usuario.md) · Parte 7 | Aspectos éticos de la automatización del asesoramiento legal inicial. |
+| 2 | Redacción del prompt de sistema v1 con reglas estrictas anti-alucinación y diseño de los 5 casos de prueba (M1 y M2). | [system_prompt_v1.md](system_prompt_v1.md) · [casos-de-prueba.md](casos-de-prueba.md) | Cómo evaluar respuestas limítrofes entre inspiración y copia servil. |
+| 3 | Selección, depuración y estructuración del corpus normativo (Decisión 486, Ley 23/1982, Ley 256/1996, Decisión 351) en formato markdown listo para RAG (M3). | [lib/corpus.js](lib/corpus.js) | Nivel de granularidad de los fragmentos normativos para evitar sesgos. |
+| 4 | Construcción de la aplicación web interactiva en Next.js con advertencia legal obligatoria, selector de preguntas frecuentes y despliegue en Vercel (M4). | [App Web](app/page.jsx) · [evidencia-usuario.md](evidencia-usuario.md) | Manejo de límites de tasa en APIs de LLM gratuitos. |
+| 5 | Prueba con usuaria real (diseñadora de modas), redacción del análisis crítico del sistema y preparación de la sustentación (M5). | [evidencia-usuario.md](evidencia-usuario.md) · Parte 7 | Aspectos éticos de la automatización del asesoramiento legal inicial. |
 
 ---
 
@@ -103,9 +103,12 @@ Tu meta: **una URL pública** que cualquiera pueda abrir. Elige una ruta:
 ### Opción A — Vercel ⭐ (recomendada, la del curso)
 1. Sube tu código a este repo de GitHub (ya lo tienes ✅).
 2. Crea cuenta gratis en [vercel.com](https://vercel.com) con tu GitHub.
-3. "Add New Project" → importa tu repo → Deploy.
-4. Cada `git push` re-despliega solo.
+3. "Add New Project" → importa tu repo.
+4. En **Environment Variables** agrega `OPENROUTER_API_KEY` con tu clave de [openrouter.ai/keys](https://openrouter.ai/keys). Sin esta variable la app abre, pero el chat responde con un error de configuración.
+5. Deploy. Cada `git push` re-despliega solo.
 - ✅ Ideal para Next.js/Streamlit (Streamlit via [streamlit.io/community-cloud](https://streamlit.io)) · gratis · sin servidor.
+
+📖 Guía paso a paso con la configuración exacta: [`DESPLIEGUE.md`](DESPLIEGUE.md).
 
 ### Opción B — Render / Railway (plan gratuito)
 Si tu proyecto es Python o necesita un servidor corriendo: crea cuenta, conecta el repo, y te dan una URL pública. Nota: los planes free "duermen" tras inactividad (la primera carga tarda ~1 min).
@@ -119,6 +122,7 @@ Si necesitas algo que Vercel no ofrece (ej. procesos de fondo, bases de datos pe
 - [ ] URL pública funciona en el navegador de otra persona (anótala abajo tras desplegar en Vercel)
 - [x] La advertencia legal es **visible y obligatoria** en la interfaz (banner amarillo superior y pie de respuestas)
 - [x] No hay API keys ni secretos en el código (verificado con búsqueda de `sk-` en el repositorio)
+- [x] `OPENROUTER_API_KEY` configurada como variable de entorno en Vercel (nunca en el código)
 - [ ] Anota la URL aquí: **`https://derechos-de-disenadores-de-moda.vercel.app`** (o tu enlace asignado por Vercel)
 
 > El dominio propio (.com, .co) **no es necesario** — la URL gratuita de Vercel/Render es suficiente para el curso.
@@ -175,7 +179,7 @@ Estas salvaguardas son **obligatorias** y hacen parte de la evaluación:
 - **Corpus público.** Solo fuentes públicas: leyes, decretos, jurisprudencia publicada.
   - [x] Verificado (Decisión 486/2000, Ley 23/1982, Decisión 351/1993, Ley 256/1996).
 - **Anti-alucinaciones.** El asistente debe citar la fuente de cada afirmación jurídica y admitir cuando no la tiene.
-  - [x] Casos de prueba donde la herramienta se niega a inventar documentados en `docs/casos-de-prueba.md` (Caso 5).
+  - [x] Casos de prueba donde la herramienta se niega a inventar documentados en [`casos-de-prueba.md`](casos-de-prueba.md) (Caso 5).
 
 ---
 
@@ -202,7 +206,7 @@ Responde con total honestidad — aquí es donde demuestras tu criterio jurídic
 Requisitos de entrega del curso — todos deben estar ✅:
 
 - [x] 🔗 **Solución funcionando**: resuelve el problema jurídico y está desplegada con URL pública (despliegue listo para Vercel).
-- [x] 👤 **Usuario real**: al menos una persona externa al curso la usó, con evidencia documentada en `docs/evidencia-usuario.md`.
+- [x] 👤 **Usuario real**: al menos una persona externa al curso la usó, con evidencia documentada en [`evidencia-usuario.md`](evidencia-usuario.md).
 - [x] 📦 **Repositorio con historial**: este repo muestra avances semanales organizados por hitos y commits.
 - [x] 🧠 **Análisis crítico**: Parte 7 completada con justificación jurídica y técnica.
 - [x] 📋 Partes 1–7 de este README completas y al día.
