@@ -26,8 +26,20 @@ function Message({ message }) {
         {isUser ? "Tú" : "ML"}
       </div>
       <div className="message-body">
-        <div className="bubble">
-          <RichText text={message.content} />
+        <div className={`bubble ${message.streaming ? "bubble-streaming" : ""}`}>
+          {message.content ? (
+            <RichText text={message.content} />
+          ) : (
+            <span className="thinking">
+              <span></span>
+              <span></span>
+              <span></span>
+              <em>Consultando el corpus normativo…</em>
+            </span>
+          )}
+          {message.streaming && message.content && (
+            <span className="caret" aria-hidden="true" />
+          )}
         </div>
 
         {message.sources?.length > 0 && (
@@ -47,6 +59,14 @@ function Message({ message }) {
   );
 }
 
+function updateLastAssistant(messages, patch) {
+  const next = [...messages];
+  const lastIndex = next.length - 1;
+  if (lastIndex < 0) return messages;
+  next[lastIndex] = { ...next[lastIndex], ...patch };
+  return next;
+}
+
 export default function Home() {
   const [messages, setMessages] = useState([
     { role: "assistant", content: GREETING, sources: [] },
@@ -58,7 +78,10 @@ export default function Home() {
   const inputRef = useRef(null);
 
   useEffect(() => {
-    endRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
+    endRef.current?.scrollIntoView({
+      behavior: loading ? "auto" : "smooth",
+      block: "end",
+    });
   }, [messages, loading]);
 
   useEffect(() => {
@@ -74,8 +97,11 @@ export default function Home() {
     setMessages((current) => [
       ...current,
       { role: "user", content: question, sources: [] },
+      { role: "assistant", content: "", sources: [], streaming: true },
     ]);
     setLoading(true);
+
+    let receivedText = "";
 
     try {
       const response = await fetch("/api/chat", {
@@ -84,21 +110,67 @@ export default function Home() {
         body: JSON.stringify({ question }),
       });
 
-      const data = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
+      if (!response.ok || !response.body) {
+        const data = await response.json().catch(() => ({}));
         throw new Error(data.error || "No se pudo obtener una respuesta.");
       }
 
-      setMessages((current) => [
-        ...current,
-        {
-          role: "assistant",
-          content: data.answer,
-          sources: data.sources || [],
-        },
-      ]);
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+      let streamError = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() ?? "";
+
+        for (const line of lines) {
+          if (!line.trim()) continue;
+
+          let event;
+          try {
+            event = JSON.parse(line);
+          } catch {
+            continue;
+          }
+
+          if (event.type === "sources") {
+            const sources = Array.isArray(event.sources) ? event.sources : [];
+            setMessages((current) =>
+              updateLastAssistant(current, { sources }),
+            );
+          } else if (event.type === "delta") {
+            receivedText += event.text;
+            setMessages((current) =>
+              updateLastAssistant(current, {
+                content: receivedText,
+                streaming: true,
+              }),
+            );
+          } else if (event.type === "error") {
+            streamError = event.message || "No se pudo obtener una respuesta.";
+          }
+        }
+      }
+
+      if (streamError && !receivedText) {
+        setMessages((current) => current.slice(0, -1));
+        throw new Error(streamError);
+      }
+
+      setMessages((current) =>
+        updateLastAssistant(current, { streaming: false }),
+      );
     } catch (requestError) {
+      setMessages((current) =>
+        current[current.length - 1]?.streaming
+          ? current.slice(0, -1)
+          : current,
+      );
       setError(requestError.message);
     } finally {
       setLoading(false);
@@ -154,18 +226,6 @@ export default function Home() {
             <Message key={index} message={message} />
           ))}
 
-          {loading && (
-            <article className="message message-assistant">
-              <div className="avatar" aria-hidden="true">ML</div>
-              <div className="message-body">
-                <div className="bubble typing">
-                  <span></span><span></span><span></span>
-                  <em>Consultando el corpus normativo…</em>
-                </div>
-              </div>
-            </article>
-          )}
-
           {error && (
             <div className="error-box" role="alert">
               <strong>No pudimos responder.</strong> {error}
@@ -179,11 +239,11 @@ export default function Home() {
           <section className="suggestions" aria-label="Preguntas sugeridas">
             <h2>Casos de prueba</h2>
             <div className="chips">
-              {SUGGESTED_QUESTIONS.map((question) => (
+              {SUGGESTED_QUESTIONS.map((question, index) => (
                 <button
                   key={question}
                   type="button"
-                  className="chip"
+                  className={`chip chip-${(index % 4) + 1}`}
                   onClick={() => sendQuestion(question)}
                   disabled={loading}
                 >
@@ -216,7 +276,7 @@ export default function Home() {
               className="send-button"
               disabled={loading || input.trim() === ""}
             >
-              {loading ? "Enviando…" : "Consultar"}
+              {loading ? "Escribiendo…" : "Consultar"}
             </button>
           </div>
         </form>
