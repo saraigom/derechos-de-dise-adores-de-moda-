@@ -5,7 +5,23 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
-const DEFAULT_MODEL = "google/gemma-4-31b-it:free";
+// Modelos gratuitos de OpenRouter, en orden de preferencia. Los modelos :free
+// comparten cupo y a veces devuelven 429 (saturado) o quedan sin texto, así que
+// se intentan uno por uno hasta obtener una respuesta válida.
+const FREE_MODELS = [
+  "dots-studio/dots-3-note-preview:free",
+  "google/gemma-4-31b-it:free",
+  "google/gemma-4-26b-a4b-it:free",
+  "xingchen-agi/xing4.0-29b-a4b:free",
+  "liquid/lfm-2.5-2.6b:free",
+];
+
+function modelChain() {
+  const preferred = (process.env.OPENROUTER_MODEL || "").trim();
+  if (!preferred) return FREE_MODELS;
+  return [preferred, ...FREE_MODELS.filter((model) => model !== preferred)];
+}
+
 const MAX_QUESTION_LENGTH = 2000;
 
 export async function POST(request) {
@@ -71,49 +87,53 @@ export async function POST(request) {
     { role: "user", content: question },
   ];
 
-  const model = process.env.OPENROUTER_MODEL || DEFAULT_MODEL;
-
   try {
-    const upstream = await fetch(OPENROUTER_URL, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${apiKey}`,
-        "Content-Type": "application/json",
-        "HTTP-Referer":
-          process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-        "X-Title": "ModaLex AI",
-      },
-      body: JSON.stringify({
-        model,
-        messages,
-        temperature: 0.2,
-        max_tokens: 1200,
-      }),
-    });
+    let answer = "";
 
-    if (!upstream.ok) {
-      const detail = await upstream.text();
-      console.error(
-        "OpenRouter respondió con error:",
-        upstream.status,
-        detail.slice(0, 800),
-      );
-
-      return Response.json(
-        {
-          error:
-            "El modelo no respondió correctamente. Verifica que OPENROUTER_API_KEY sea válida y que el modelo configurado esté disponible y sea gratuito.",
+    for (const model of modelChain()) {
+      const upstream = await fetch(OPENROUTER_URL, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+          "HTTP-Referer":
+            process.env.NEXT_PUBLIC_SITE_URL ||
+            "https://derechos-de-dise-adores-de-moda-eml.vercel.app",
+          "X-Title": "ModaLex AI",
         },
-        { status: 502 },
-      );
-    }
+        body: JSON.stringify({
+          model,
+          messages,
+          temperature: 0.2,
+          max_tokens: 1200,
+        }),
+      });
 
-    const data = await upstream.json();
-    const answer = data?.choices?.[0]?.message?.content?.trim();
+      if (!upstream.ok) {
+        const detail = await upstream.text();
+        console.error(
+          "OpenRouter respondió con error:",
+          model,
+          upstream.status,
+          detail.slice(0, 500),
+        );
+        continue;
+      }
+
+      const data = await upstream.json();
+      answer = data?.choices?.[0]?.message?.content?.trim() || "";
+
+      if (answer) break;
+
+      console.error("Modelo sin contenido, se prueba el siguiente:", model);
+    }
 
     if (!answer) {
       return Response.json(
-        { error: "El modelo devolvió una respuesta vacía. Intenta de nuevo." },
+        {
+          error:
+            "Ningún modelo gratuito respondió en este momento. Espera un minuto y vuelve a intentar.",
+        },
         { status: 502 },
       );
     }
